@@ -75,7 +75,7 @@ if(!req.query.search) {
 })
 
 app.get('/weather', (req, res)=> {
-   console.log("Yeaaaaaaahhhhhhhhhhh")
+
     if(!req.query.address) {
      return res.send(
          { error: 'You must to enter an address'}
@@ -83,29 +83,28 @@ app.get('/weather', (req, res)=> {
     }
 
 
-geocode(req.query.address, (error, { latitude, longitude, location} )=> {
-console.log("Hey brown cow")
+geocode(req.query.address, (error, { latitude, longitude, location} =  {} )=> {
+
  
  
-    if (error) {console.log("Hey black cow")
+    if (error) {
      return res.send({ error }) 
  }
-console.log("hey white cow")
- forecast(latitude, longitude, (error, forecastData)=> {
-     console.log("Helloooooooooooooooo")
+
+ forecast(latitude, longitude, (error, forecastData) => {
+     
   if (error) {
-      console.log("hello, hello")
+      
    res.send({error})
    
       
-  } console.log("Hello error again", error)
-  console.log("klklklklklkllkl")
-  console.log("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+  } 
+  
  
    res.send({
     forecast: forecastData,
     location,
-    //address: req.query.address
+    address: req.query.address
   })
  
 
