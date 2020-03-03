@@ -144,4 +144,4 @@ app.get('*', (req, res)=> {
 });
 const port = process.env.PORT || 3001
 
-app.listen(port, ()=>{console.log(`Server start at port ${port}`)})
+app.listen(port, () => { console.log(`Server start at port ${port}`)})
