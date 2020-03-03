@@ -20,6 +20,7 @@ weatherform.addEventListener('submit', (e)=>{
         if(data.error) {
             messageOne.textContent = data.error
             console.log(data.error)
+            console.log(data.error)
         } else {
 
             console.log(data.location)
